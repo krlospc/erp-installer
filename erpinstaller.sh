@@ -110,9 +110,28 @@ install_postgresql(){
 
 }
 
-#update_repository
-#install_php
-#install_apache2
-#install_git
+install_erp(){
+        print_info "Create the dir project"
+        mkdir -p /var/www/html/kerp/pxp
+        git clone https://github.com/ofepbolivia/pxp.git /var/www/html/kerp/pxp
+
+        ln -s /var/www/html/kerp/pxp/lib /var/www/html/kerp/lib
+        ln -s /var/www/html/kerp/pxp/index.php /var/www/html/kerp/index.php
+        ln -s /var/www/html/kerp/pxp/sis_generador /var/www/html/kerp/sis_generador
+        ln -s /var/www/html/kerp/pxp/sis_organigrama /var/www/html/kerp/sis_organigrama
+        ln -s /var/www/html/kerp/pxp/sis_parametros /var/www/html/kerp/sis_parametros
+        ln -s /var/www/html/kerp/pxp/sis_seguridad /var/www/html/kerp/sis_seguridad
+        ln -s /var/www/html/kerp/pxp/sis_workflow /var/www/html/kerp/sis_workflow
+
+
+
+}
+
+
+update_repository
+install_php
+install_apache2
+install_git
 #install_postgres
 install_postgresql
+install_erp
